@@ -1,9 +1,10 @@
 DATASET = {
+    
         "UVG_YUV420": {
-           "Beauty":           {"frameWH": (1920, 1080), "frameNum": 96, "frameRate": 120},
-           "Bosphorus":        {"frameWH": (1920, 1080), "frameNum": 96, "frameRate": 120},
+         #   "Beauty":           {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 120},
+         #   "Bosphorus":        {"frameWH": (1920, 1080), "frameNum": 96, "frameRate": 120},
         #    "HoneyBee":         {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
-        #    "Jockey":           {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
+           "Jockey":           {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 120},
         #    "ReadySteadyGo":    {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
         #    "ShakeNDry":        {"frameWH": (1920, 1080), "frameNum": 289, "frameRate": 120},
         #    "YachtRide":        {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
@@ -80,3 +81,6 @@ DATASET = {
 		#     "fae057c83b04868424da3bb7139e29b3f328d5a93aaa9e617e825b93422d92c5":      {"frameWH": (1920, 1080), "frameNum": 225, "frameRate": 25},
 		# }
     }
+
+# QP = [19, 22, 27, 32, 37]
+QP = [22, 27, 32, 37]

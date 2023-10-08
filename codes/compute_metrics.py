@@ -18,7 +18,7 @@ from vision import imgloader, rgb_transform
 from torch.utils.data import Dataset as torchData
 from torch.utils.data import DataLoader
 from warnings import warn
-from Datasets import DATASET
+from Setting import DATASET, QP
 
 msssim_fn = MS_SSIM(data_range=1.)
 
@@ -123,8 +123,8 @@ if __name__ == "__main__":
     parser.add_argument('--savePath', type=str, required=True)
     parser.add_argument('--dropLast', action="store_true")
     args = parser.parse_args()
-    qpValues = [19, 22, 27, 32, 37]
-    # qpValues = [27]
+    qpValues = QP
+    
     for qp in tqdm(qpValues):
         txtName = os.path.join(args.savePath, f"brief_summary_{qp}.txt")
 

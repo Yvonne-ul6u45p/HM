@@ -1,6 +1,6 @@
 import os
 import argparse
-from Datasets import DATASET
+from Setting import DATASET, QP
 
 def getCfg(binName, recName, srcName, frameRate, width, height, frameNum, qp):
     
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     args.datasetRoot = os.path.abspath(args.datasetRoot)
     os.makedirs(args.saveRoot, exist_ok=True)
 
-    qpValues = [19]
+    qpValues = QP
 
     for datasetName, seqs in datasets.items():
         for qp in qpValues:

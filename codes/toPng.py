@@ -2,7 +2,7 @@ import os
 import argparse
 from tqdm import tqdm
 from subprocess import Popen, PIPE
-from Datasets import DATASET
+from Setting import DATASET, QP
 
 
 def convertYUV420VideoToPNGImages(videoName: str, frameWH: tuple, numFrame: int, saveFolder: str, outName: str) -> None:
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     parser.add_argument('--export', type=str, required=True)
     args = parser.parse_args()
     
-    qpValues = [19]
+    qpValues = QP
 
     for qp in tqdm(qpValues):
         for datasetName, seqs in datasets.items():
