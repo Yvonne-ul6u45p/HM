@@ -15,10 +15,11 @@ Wrong_seq=[]
 
 for qp in tqdm(qpValues):
 	for datasetName, seqs in datasets.items():
-		root=os.path.join(args.cfgRoot, datasetName, f'qp={qp}')
+		root = os.path.join(args.cfgRoot, datasetName, f'qp={qp}')
 		for seqName, seq in seqs.items():
-			path=os.path.join(root, seqName, 'rgb')
+			path = os.path.join(root, seqName, 'rgb')
 			# print(seqName, len(os.listdir(path)), seq)
+			
 			if len(os.listdir(path)) != seq['frameNum']:
 				check=False
 				Wrong_seq.append(f"{path}")

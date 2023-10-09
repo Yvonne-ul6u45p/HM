@@ -6,7 +6,7 @@ from Setting import DATASET, QP
 
 def runHMcodec(codingCfg: str, seqCfg: str, outName: str) -> None:
     command = f"TAppEncoderStatic -c {codingCfg} -c {seqCfg} > {outName}"
-    # print("Run command: ", command)
+    print("Run command: ", command)
     return Popen(command, universal_newlines=True, shell=True, stdout=PIPE, stderr=PIPE)
 
 
@@ -34,7 +34,6 @@ if __name__ == "__main__":
 
                 cfgName = os.path.join(cfgPath, name + '.cfg')
                 outName = os.path.join(cfgPath, name + '.out')
-
                 qpProcesses.append(runHMcodec(args.codingCfg, cfgName, outName))
 
         # print("Wait...")

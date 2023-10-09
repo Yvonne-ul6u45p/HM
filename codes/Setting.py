@@ -1,14 +1,17 @@
 DATASET = {
+    "ISCAS2023_YUV420": {
+      "ISCAS_GC_2023_Test1":    {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25},
+    },
     
-        "UVG_YUV420": {
+        # "UVG_YUV420": {
          #   "Beauty":           {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 120},
          #   "Bosphorus":        {"frameWH": (1920, 1080), "frameNum": 96, "frameRate": 120},
         #    "HoneyBee":         {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
-           "Jockey":           {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 120},
+          #  "Jockey":           {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 120},
         #    "ReadySteadyGo":    {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
         #    "ShakeNDry":        {"frameWH": (1920, 1080), "frameNum": 289, "frameRate": 120},
         #    "YachtRide":        {"frameWH": (1920, 1080), "frameNum": 577, "frameRate": 120},
-        },
+        # },
         #"HEVC-B_YUV420": {
         #    "BasketballDrive": {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 50},
         #    "BQTerrace":       {"frameWH": (1920, 1080), "frameNum": 97, "frameRate": 60},

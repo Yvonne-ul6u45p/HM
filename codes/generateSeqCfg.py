@@ -60,7 +60,8 @@ if __name__ == "__main__":
 
                 binName = os.path.join(saveFolder, name + '.bin')
                 recName = os.path.join(saveFolder, name + '.yuv')
-                srcName = os.path.join(args.datasetRoot, datasetName, name + '.yuv')
+                srcName = os.path.join(args.datasetRoot, datasetName, name + '.yuv')   # 
+                print("srcName", srcName)
                 cfg = getCfg(binName, recName, srcName, seq["frameRate"], width, height, seq["frameNum"], qp)
                 
                 cfgName = os.path.join(saveFolder, name + '.cfg')
