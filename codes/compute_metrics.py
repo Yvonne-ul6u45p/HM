@@ -140,7 +140,7 @@ if __name__ == "__main__":
 
                 recPath = os.path.join(args.recRoot, datasetName, f"qp={qp}", seqName)
                 tarFrameFolder = os.path.join(args.datasetRoot, datasetName, seqName)
-                if datasetName != "CLIC2022_YUV420":
+                if datasetName != "CLIC2022_YUV420" and datasetName != "ISCAS2023_YUV420":
                     recName = f"{seqName}_{w}x{h}_{frameRate}"
                 else: 
                     recName = seqName
@@ -165,7 +165,7 @@ if __name__ == "__main__":
                 binName = os.path.join(recPath, recName + ".bin")
                 bpp, bps = computeRateOfEncodeVideo(binName, frameWH, frameNum, frameRate, biasBits)
 
-                recFrameFolder = os.path.join(recPath, "rgb")
+                recFrameFolder = os.path.join(recPath, 'rgb')
                 psnr, msssim = computeQualityOfDecodedImages(frameNum, tarFrameFolder, recFrameFolder)
                 recordValuesTo(txtName, seqName, frameNum, bps, bpp, psnr, msssim)
 

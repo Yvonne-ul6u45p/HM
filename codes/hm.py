@@ -6,7 +6,7 @@ from Setting import DATASET, QP
 
 def runHMcodec(codingCfg: str, seqCfg: str, outName: str) -> None:
     command = f"TAppEncoderStaticd -c {codingCfg} -c {seqCfg} > {outName}"
-    print("Run command: ", command)
+    print("hm.py\tRun command: ", command)
     return Popen(command, universal_newlines=True, shell=True, stdout=PIPE, stderr=PIPE)
 
 
@@ -27,7 +27,7 @@ if __name__ == "__main__":
             for seqName, seq in seqs.items():
                 cfgPath = os.path.join(args.cfgRoot, datasetName, f"qp={qp}", seqName)
                 width, height = seq["frameWH"]
-                if datasetName != "CLIC2022_YUV420":
+                if datasetName != "CLIC2022_YUV420" and datasetName != "ISCAS2023_YUV420":
                     name = f"{seqName}_{width}x{height}_{seq['frameRate']}" 
                 else:
                     name = seqName

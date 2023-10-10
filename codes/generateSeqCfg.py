@@ -6,22 +6,22 @@ def getCfg(binName, recName, srcName, frameRate, width, height, frameNum, qp):
     
     cfg =   "#======== Profile definition ==============\n" \
             "#======== File I/O =====================\n" \
-            f"BitstreamFile                 : {binName}\n" \
-            f"ReconFile                     : {recName}\n" \
-            f"InputFile                     : {srcName}\n" \
+           f"BitstreamFile                 : {binName}\n" \
+           f"ReconFile                     : {recName}\n" \
+           f"InputFile                     : {srcName}\n" \
             "InputBitDepth                 : 8           # Input bitdepth\n" \
             "InputChromaFormat             : 420         # Ratio of luminance to chrominance samples\n" \
             "ChromaFormatIDC               : 420                                        \n" \
-            f"FrameRate                     : {frameRate} # Frame Rate per second\n" \
+           f"FrameRate                     : {frameRate} # Frame Rate per second\n" \
             "FrameSkip                     : 0           # Number of frames to be skipped in input\n" \
-            f"SourceWidth                   : {width}     # Input  frame width\n" \
-            f"SourceHeight                  : {height}    # Input  frame height\n" \
-            f"FramesToBeEncoded             : {frameNum}  # Number of frames to be coded\n" \
+           f"SourceWidth                   : {width}     # Input  frame width\n" \
+           f"SourceHeight                  : {height}    # Input  frame height\n" \
+           f"FramesToBeEncoded             : {frameNum}  # Number of frames to be coded\n" \
             "\n" \
             "#======== Others =======================\n" \
-            f"QP                            : {qp}        # Quantization parameter(0-51)\n" \
+           f"QP                            : {qp}        # Quantization parameter(0-51)\n" \
             "Level                         : 4.1\n" \
-                "InternalBitDepth                : 8\n"
+            "InternalBitDepth                : 8\n"
 
     return cfg
 
@@ -51,19 +51,17 @@ if __name__ == "__main__":
             for seqName, seq in seqs.items():
                 saveFolder = os.path.join(savePath, seqName)
                 os.makedirs(saveFolder, exist_ok=True)
-
                 width, height = seq["frameWH"]
-                if datasetName != "CLIC2022_YUV420":
+                if datasetName != "CLIC2022_YUV420" and datasetName != "ISCAS2023_YUV420":
                     name = f"{seqName}_{width}x{height}_{seq['frameRate']}" 
                 else:
                     name = seqName
 
                 binName = os.path.join(saveFolder, name + '.bin')
                 recName = os.path.join(saveFolder, name + '.yuv')
-                srcName = os.path.join(args.datasetRoot, datasetName, name + '.yuv')   # 
-                print("srcName", srcName)
+                srcName = os.path.join(args.datasetRoot, datasetName, name + '.yuv')
+                
                 cfg = getCfg(binName, recName, srcName, seq["frameRate"], width, height, seq["frameNum"], qp)
                 
                 cfgName = os.path.join(saveFolder, name + '.cfg')
                 exportCfg(cfgName, cfg)
-

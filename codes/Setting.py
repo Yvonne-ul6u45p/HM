@@ -1,6 +1,6 @@
 DATASET = {
     "ISCAS2023_YUV420": {
-      "ISCAS_GC_2023_Test1":    {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25},
+      "ISCAS_GC_2023_Test1":    {"frameWH": (1920, 1080), "frameNum": 1, "frameRate": 25},
     },
     
         # "UVG_YUV420": {

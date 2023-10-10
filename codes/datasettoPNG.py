@@ -22,7 +22,7 @@ if __name__ == "__main__":
         for seqName, seq in seqs.items():
             cfgPath = os.path.join(args.dataRoot, datasetName)
             width, height = seq["frameWH"]
-            if datasetName != "CLIC2022_YUV420":
+            if datasetName != "CLIC2022_YUV420" and datasetName != "ISCAS2023_YUV420":
                 name = f"{seqName}_{width}x{height}_{seq['frameRate']}" 
             else:
                 name = seqName

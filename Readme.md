@@ -24,29 +24,23 @@
     
 #### Check if install successfully ?
     
-    cd ..         # jump out of build/
-    cd bin/
+    cd ../bin/                # jump into bin/
+    ./TAppEncoderStaticd      # There should be some config message
     
-    ./TAppEncoderStaticd        # There should be some config message
-    
-    
-    cd ..         # jump out of bin/
-    ./TAppEncoderStaticd        # It should show NO SUCH COMMAND ERROR !!!
+                                # jump out of bin/
+    ../TAppEncoderStaticd       # It should show NO SUCH COMMAND ERROR !!!
+                                # bash: ../TAppEncoderStaticd: No such file or directory
     
 #### Add system environment
+    echo 'export PATH=/home/pc-cluster{num}/HM16.22/HM/bin:$PATH' >> ~/.bashrc
     
-    cd ~    # go to home
-    vim .bashrc
-    
-    
+    vim ~/.bashrc
     # add this code at the last line of this file
-    export PATH={YOUR_PATH_TO_HM16.22}/HM16.22/HM/bin:$PATH
-    
-        # For example    export PATH=/home/pc-cluster9/HM16.22/HM/bin:$PATH
-    
-    
+    export PATH=/home/pc-cluster{num}/HM16.22/HM/bin:$PATH
+
+#### Check
     # Refresh your system environment
     bash
     
-    # GO back to HM16.22/HM/ again
-    TAppEncoderStaticd            # TYPE This command and config message should be seen
+    cd ~/HM16.22/HM/            # GO back to ~/HM16.22/HM/ again
+    TAppEncoderStaticd          # TYPE This command and config message should be seen

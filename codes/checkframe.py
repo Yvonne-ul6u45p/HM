@@ -30,5 +30,3 @@ else:
     print("Wrong Seq:")
     for path in Wrong_seq:
         print(path)
-    
-
