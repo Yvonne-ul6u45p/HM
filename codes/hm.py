@@ -5,7 +5,7 @@ from subprocess import Popen, PIPE
 from Setting import DATASET, QP
 
 def runHMcodec(codingCfg: str, seqCfg: str, outName: str) -> None:
-    command = f"TAppEncoderStatic -c {codingCfg} -c {seqCfg} > {outName}"
+    command = f"TAppEncoderStaticd -c {codingCfg} -c {seqCfg} > {outName}"
     print("Run command: ", command)
     return Popen(command, universal_newlines=True, shell=True, stdout=PIPE, stderr=PIPE)
 
