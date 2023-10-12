@@ -18,7 +18,7 @@ if __name__ == "__main__":
     parser.add_argument('--cfgRoot', type=str, required=True)
     args = parser.parse_args()
     
-    qpValues = [22, 27, 32, 37] # 19
+    qpValues = QP
 
     for qp in tqdm(qpValues):
         for datasetName, seqs in datasets.items():
