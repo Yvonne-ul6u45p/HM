@@ -74,7 +74,7 @@ class Read_YUV_Video():
     def check_video_sanity(self, file_path):
         total_size = Path(file_path).stat().st_size
         if total_size < (self.y_size + self.uv_size) * self.frame_num:
-            raise "Frame index Out Of Range!!! {file_path} didn't be compressed properly."
+            raise IndexError(f"Video file {file_path} didn't be compressed properly, it should contain {self.frame_num} frames !!!")
 
 
 class MetricType():
@@ -170,13 +170,18 @@ if __name__ == '__main__':
                 if args.frameNum > 0:
                     frameNum = args.frameNum
                 else:
-                    frameNum = seqInfo["frameNum"]
+                    frameNum = seqInfo['frameNum']
+
+                if 'alias' in seqInfo:
+                    reportPath = os.path.join(savePath, f"{seqInfo['alias']}.csv")
+                else:
+                    reportPath = os.path.join(savePath, f"{seqName}.csv")
 
                 Compute_RD_PerSequence(
                     recName = os.path.join(args.recRoot, datasetName, f"qp={qp}", seqName, f"{seqInfo['vi_name']}.yuv"),
                     outName = os.path.join(args.recRoot, datasetName, f"qp={qp}", seqName, f"{seqInfo['vi_name']}.out"),
                     srcName = os.path.join(args.datasetRoot, datasetName, seqName, f"{seqInfo['vi_name']}.yuv"),
-                    reportPath = os.path.join(savePath, f"{seqName}.csv"),
+                    reportPath = reportPath,
                     W_H = seqInfo['frameWH'],
                     frameNum = frameNum,
                     srcFormat = args.srcFormat,

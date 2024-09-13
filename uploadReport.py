@@ -6,7 +6,7 @@ from subprocess import Popen
 from Setting import DATASET, QP
 import warnings
 
-def uploadReport(srcPath: str, settingName: str, qp, seqName: str) -> str:
+def uploadReport(srcPath: str, settingName: str, qp: int, seqName: str) -> str:
     dstPath = f"/work_d/HM16.22/results/{settingName}-{qp}/report/{seqName}.csv"
     command = f"sshpass -p 3395  rsync -azh -e 'ssh -oStrictHostKeyChecking=no' --rsync-path='mkdir -p {os.path.dirname(dstPath)} && rsync' {srcPath}  pc3395@192.168.1.11:{dstPath}"
 
@@ -33,7 +33,9 @@ def main(argv):
     for reportRoot in args.reportRoots:
         for qp in qpValues:
             for seqs in datasets.values():
-                for seqName in seqs.keys():
+                for seqName, seqInfo in seqs.items():
+                    if 'alias' in seqInfo:
+                        seqName = seqInfo['alias']
                     reportPath = os.path.join(reportRoot, 'report', f"qp={qp}", f"{seqName}.csv")
                     
                     if os.path.isfile(reportPath):

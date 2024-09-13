@@ -71,7 +71,36 @@ DATASET = {
         "Kimono1":              {"frameWH": (1920, 1080), "frameNum": 240, "frameRate": 24, "vi_name": "Kimono1_1920x1080_24_10bit_444"},
         "OldTownCross":         {"frameWH": (1920, 1080), "frameNum": 500, "frameRate": 50, "vi_name": "OldTownCross_1920x1080_50_10bit_444"},
         "ParkScene":            {"frameWH": (1920, 1080), "frameNum": 240, "frameRate": 24, "vi_name": "ParkScene_1920x1080_24_10bit_444"},
-    }
+    },
+    "ISCAS23_Test": {
+        "Test8":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test8",  "alias": "ISCAS23_Test8"},
+        "Test9":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test9",  "alias": "ISCAS23_Test9"},
+        "Test10": {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test10", "alias": "ISCAS23_Test10"},
+    },
+    "ISCAS24_Validation": {
+        "Validation1":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation1"},
+        "Validation2":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation2"},
+        "Validation3":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation3"},
+        "Validation4":  {"frameWH": (1920, 1080), "frameNum": 240, "frameRate": 25, "vi_name": "Validation4"},
+        "Validation5":  {"frameWH": (1920, 1080), "frameNum": 250, "frameRate": 25, "vi_name": "Validation5"},
+        "Validation6":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation6"},
+        "Validation7":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation7"},
+        "Validation8":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation8"},
+        "Validation9":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation9"},
+        "Validation10": {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "Validation10"},
+    },
+    "ISCAS24_Test": {
+        "Test1":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test1",  "alias": "ISCAS24_Test1"},
+        "Test2":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test2",  "alias": "ISCAS24_Test2"},
+        "Test3":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test3",  "alias": "ISCAS24_Test3"},
+        "Test4":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test4",  "alias": "ISCAS24_Test4"},
+        "Test5":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test5",  "alias": "ISCAS24_Test5"},
+        "Test6":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test6",  "alias": "ISCAS24_Test6"},
+        "Test7":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test7",  "alias": "ISCAS24_Test7"},
+        "Test8":  {"frameWH": (1920, 1080), "frameNum": 250, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test8",  "alias": "ISCAS24_Test8"},
+        "Test9":  {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test9",  "alias": "ISCAS24_Test9"},
+        "Test10": {"frameWH": (1920, 1080), "frameNum": 300, "frameRate": 25, "vi_name": "ISCAS_GC_2023_Test10", "alias": "ISCAS24_Test10"},
+    },
 }
 
 
